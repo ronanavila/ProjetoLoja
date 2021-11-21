@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using  ProjetoLoja.Models;
+﻿using ProjetoLoja.Models;
 
 namespace ProjetoLoja.Repositories
 {
@@ -10,7 +6,8 @@ namespace ProjetoLoja.Repositories
     {
         public ProductsRepository(ApplicationContext contexto) : base(contexto)
         {
+
         }
- 
+
     }
 }

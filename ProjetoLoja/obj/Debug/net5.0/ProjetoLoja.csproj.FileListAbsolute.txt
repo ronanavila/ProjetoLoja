@@ -72,3 +72,10 @@ C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\obj\Debug\net5.0\ref\ProjetoLoja.
 C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\obj\Debug\net5.0\ProjetoLoja.pdb
 C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\obj\Debug\net5.0\ProjetoLoja.genruntimeconfig.cache
 C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\obj\Debug\net5.0\ProjetoLoja.csproj.AssemblyReference.cache
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Ronan\Desktop\ProjetoLoja\ProjetoLoja\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

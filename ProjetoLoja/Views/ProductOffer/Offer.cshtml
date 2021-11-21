@@ -2,9 +2,7 @@
     ViewData["Title"] = "Oferta";
 }
 
-@model Offer;
-
-
+@model OfferRegistration;
 
 <h3>Oferta</h3>
 
@@ -12,45 +10,57 @@
 <form method="post" asp-action="Find">
     <div class="panel panel-default">
         <div class="form-group">
-            <label class="control-label" >Digite o Nome ou CPF para buscar</label>
-            <input type="text" class="form-control" id="attribute" name ="attribute" placeholder="Valor a buscar">
+            <label class="control-label">Digite o Nome ou CPF para buscar</label>
+            <input type="text" class="form-control" id="attribute" name="attribute" placeholder="Valor a buscar">
             <input type="submit" class="btn btn-success" value="Buscar">
         </div>
     </div>
 </form>
-<form method="post" asp-action="Registration">
-    <div class="panel panel-default">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="panel-body">
-            <div class="col-md-4">
-                @*<div class="form-group">
-                    <label class="control-label" asp-for="Customer.Name"></label>
-                    <input type="text" class="form-control" id="name" placeholder="José Carlos Medeiros" asp-for="Customer.Name">
-                    <span asp-validation-for="Customer.Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" asp-for="Customer.CPF"></label>
-                    <input type="text" class="form-control" id="cpf" placeholder="333.333.333-33" asp-for="Customer.CPF">
-                    <span asp-validation-for="Customer.CPF" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" asp-for="Customer.PhoneNumber"></label>
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="(99)9999-9999" asp-for="Customer.PhoneNumber">
-                    <span asp-validation-for="Customer.PhoneNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" asp-for="Customer.Credit"></label>
-                    <input type="number" min="0" step="0.01" value="0.00" class="form-control" id="credit" placeholder="0,00" asp-for="Customer.Credit">
-                    <span asp-validation-for="Customer.Credit" class="text-danger"></span>
-                </div>*@
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Finalizar Cadastro">
+<div>
+    @{if (Model != null)
+        {
+            <select name="clientselection" class="selectpicker coloffset-1" required form="CutomerForm" asp-for="ListCustomer" asp-items="@(new SelectList(Model.ListCustomer, nameof(Customer.Name), nameof(Customer.Name)))">
+                <option selected="selected" value="">Selecione</option>
+            </select>
+        }
+    }
+</div>
+
+@*DIFICULDADES PARA TRATAS OS DADOS NO FRONT END*@
+@*<form id="CutomerForm" method="post" asp-action="Registration">
+        <div class="panel panel-default">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="panel-body">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Customer.Name"></label>
+                        <input type="text" class="form-control" id="name" placeholder="José Carlos Medeiros" asp-for="Customer.Name">
+                        <span asp-validation-for="ListCustomer." class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Customer.CPF"></label>
+                        <input type="text" class="form-control" id="cpf" placeholder="333.333.333-33" asp-for="Customer.CPF">
+                        <span asp-validation-for="Customer.CPF" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Customer.PhoneNumber"></label>
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="(99)9999-9999" asp-for="Customer.PhoneNumber">
+                        <span asp-validation-for="Customer.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Customer.Credit"></label>
+                        <input type="number" min="0" step="0.01" value="0.00" class="form-control" id="credit" placeholder="0,00" asp-for="Customer.Credit">
+                        <span asp-validation-for="Customer.Credit" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Finalizar Cadastro">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>*@
+
 
 @section Scripts
 {
@@ -58,3 +68,15 @@
         <partial name="_ValidationScriptsPartial" />
     }
 }
+
+<style>
+    select {
+        width: 800px;
+        margin: 10px;
+    }
+
+        select:focus {
+            min-width: 800px;
+            width: auto;
+        }
+</style>

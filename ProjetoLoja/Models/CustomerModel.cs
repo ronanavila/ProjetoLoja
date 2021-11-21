@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Models
 {
+
+    //Modelo cliente
     [DataContract]
 
     public class Customer : BaseModel
@@ -33,7 +30,7 @@ namespace ProjetoLoja.Models
         [DisplayName("Crédito")]
         public decimal Credit { get; set; }
 
-    
+
         [DataMember]
         [ReadOnly(true)]
         [DisplayName("Status StatusForeignKey")]
@@ -67,10 +64,7 @@ namespace ProjetoLoja.Models
         [DisplayName("Estado")]
         public string State { get; set; }
 
-        public Status Status { get; set; }       
-
-        public SearchAttribute Attribute { get; }
-     
+        public Status Status { get; set; }
     }
-    public enum SearchAttribute { CPF, Name };
+
 }

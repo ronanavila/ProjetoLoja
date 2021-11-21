@@ -1,8 +1,6 @@
-﻿using System;
+﻿using ProjetoLoja.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ProjetoLoja.Models;
 
 namespace ProjetoLoja.Repositories.ApiRepositories
 {
@@ -16,11 +14,11 @@ namespace ProjetoLoja.Repositories.ApiRepositories
         public List<Offer> GetSales(string id)
         {
             List<Offer> offer = new List<Offer>();
-            //valida se o obejto é nulo e se nao existe alguem com o mesmo codigo
+            //realiza as validacao, parei em teste, algum possivel problema com o modelo, quando colocado o contais tras somente 1 resultado.
             if (id != null)
-                offer = dbSet .Where(x => x.SaleMade).Where(p => p.Customer.CPF.Contains(id)).ToList();
+                offer = dbSet.Where(x => x.SaleMade).Where(p => p.Customer.CPF.Contains(id)).ToList();
 
-         
+
             if (offer != null)
                 return offer;// dbSet.Where(x => x.Customer).Count() == 0);
 

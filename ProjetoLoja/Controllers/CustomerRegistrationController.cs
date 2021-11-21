@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoLoja.Models;
 using ProjetoLoja.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Controllers
 {
@@ -24,13 +20,13 @@ namespace ProjetoLoja.Controllers
             return View();
         }
 
-
+        //cadastro de  clientes
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Registration(Customer customer)
         {
             if (ModelState.IsValid)
-            {          
+            {
                 customerRepository.InsertCustomer(customer);
                 return RedirectToAction("Registration");
             }

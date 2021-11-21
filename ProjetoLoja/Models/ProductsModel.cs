@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Models
 {
+    //Modelo Produto
     [DataContract]
     public class Products : BaseModel
     {
         [Key]
         [DataMember]
-        [Required(ErrorMessage = "Nome é obrigatorio.")]
+        [Required(ErrorMessage = "Código é obrigatorio.")]
         [DisplayName("Código")]
         public string Code { get; set; }
 
         [DataMember]
-        [Required(ErrorMessage = "Nome é obrigatorio.")]
+        [Required(ErrorMessage = "Descrição é obrigatorio.")]
         [DisplayName("Descrição")]
         public string Description { get; set; }
 
@@ -30,7 +27,13 @@ namespace ProjetoLoja.Models
         [DataMember]
         [Required(ErrorMessage = "Tipo é obrigatorio.")]
         [DisplayName("Tipo")]
-        public string Type { get; set; }
-    
+        public ProductType Type { get; set; }
+
+    }
+
+    public enum ProductType
+    {
+        HARDWARE,
+        SOFTWARE
     }
 }

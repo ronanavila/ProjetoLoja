@@ -1,5 +1,3 @@
-using System;
-
 namespace ProjetoLoja.Models
 {
     public class ErrorViewModel

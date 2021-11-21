@@ -2,10 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoLoja.Models;
 using ProjetoLoja.Repositories.ApiRepositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Controllers.ApiController
 {

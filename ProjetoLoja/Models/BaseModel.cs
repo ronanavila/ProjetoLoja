@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Models
 {
+    //Modelo base, primarikey id auto incremental
     [DataContract]
     public class BaseModel
     {

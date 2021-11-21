@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Models
 {
+    //Modelo Status
     [DataContract]
     public class Status : BaseModel
     {
-      
+
         [DataMember]
         [Required(ErrorMessage = "Código é obrigatorio.")]
         [DisplayName("Código")]
@@ -32,6 +29,5 @@ namespace ProjetoLoja.Models
         [DisplayName("Finalizar Cliente")]
         public bool EndCustomer { get; set; }
 
-        public Customer Customer { get; set; }
     }
 }

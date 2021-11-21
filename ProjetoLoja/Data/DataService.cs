@@ -5,18 +5,16 @@ namespace ProjetoLoja
 {
     class DataService : IDataService
     {
-        private readonly ApplicationContext context;
-        private readonly ICustomerRepository customerRepository;
+        private readonly ApplicationContext context;     
 
-        public DataService(ApplicationContext context, ICustomerRepository customerRepository)
+        public DataService(ApplicationContext context)
         {
-            this.context = context;
-            this.customerRepository = customerRepository;
+            this.context = context;         
         }
 
         public void InicializaDB()
         {
-            context.Database.Migrate();          
+            context.Database.Migrate();
         }
     }
 }

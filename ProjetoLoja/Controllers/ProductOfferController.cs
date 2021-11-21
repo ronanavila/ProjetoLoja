@@ -1,43 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoLoja.Models;
 using ProjetoLoja.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja.Controllers
 {
     public partial class ProductOfferController : Controller
     {
 
-        private readonly ICustomerRepository customerRepository;
-        private readonly IProductsRepository productsRepository;
+        private readonly IOfferRepository offerRepository;
+        private readonly IOfferRegistrationRepository offerRegistration;
 
-        public ProductOfferController(ICustomerRepository customerRepository, IProductsRepository productsRepository)
+        public ProductOfferController(IOfferRepository offerRepository, IOfferRegistrationRepository offerRegistration)
         {
-            this.customerRepository = customerRepository;
-            this.productsRepository = productsRepository;
+            this.offerRepository = offerRepository;
+            this.offerRegistration = offerRegistration;
         }
-
-        //public IActionResult Offer()
-        //{
-        //    return View();
-        //}
-
         public IActionResult Offer(List<Customer> customer)
         {
             return View();
         }
 
+        //Cadastra oferta
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Find(string attribute)
         {
+            OfferRegistration registration = null;
             if (attribute != null)
             {
-                List<Customer> customers = customerRepository.GetCustomer(attribute);
-                return View("Offer", customers);
+                registration = offerRegistration.GetCustomerOffer(attribute);
+                return View("Offer", offerRegistration);
             }
             return View("Offer");
 

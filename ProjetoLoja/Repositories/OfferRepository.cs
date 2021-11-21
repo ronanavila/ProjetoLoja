@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ProjetoLoja.Models;
+﻿using ProjetoLoja.Models;
 
 namespace ProjetoLoja.Repositories
 {
-    public class OfferRepository : BaseRepository<Customer>, IOfferRepository
+    public class OfferRepository : BaseRepository<Offer>, IOfferRepository
     {
         public OfferRepository(ApplicationContext contexto) : base(contexto)
         {
         }
-
     }
 }

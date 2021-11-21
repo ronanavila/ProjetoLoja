@@ -6,12 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoLoja.Repositories;
+using ProjetoLoja.Repositories.ApiRepositories;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace ProjetoLoja
 {
@@ -53,6 +51,9 @@ namespace ProjetoLoja
             services.AddTransient<IProductsRepository, ProductsRepository>();
             services.AddTransient<IStatusRepository, StatusRepository>();
             services.AddTransient<IOfferRepository, OfferRepository>();
+            services.AddTransient<IApiProductRepository, ApiProductRepository>();
+            services.AddTransient<IApiSalesRepository, ApiSalesRepository>();
+            services.AddTransient<IOfferRegistrationRepository, OfferRegistrationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

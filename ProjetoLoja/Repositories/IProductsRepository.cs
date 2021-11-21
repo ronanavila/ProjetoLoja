@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using ProjetoLoja.Models;
-
-namespace ProjetoLoja.Repositories
+﻿namespace ProjetoLoja.Repositories
 {
-    public  interface IProductsRepository
+    public interface IProductsRepository
     {
     }
 }
